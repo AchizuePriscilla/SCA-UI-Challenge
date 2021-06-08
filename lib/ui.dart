@@ -102,7 +102,6 @@ class _UIState extends State<UI> {
                                 height: 7,
                               ),
                               CustomTextField(
-                                enabled: false,
                                 obscureText: !_visiblepassword!,
                                 inputDecoration: kInputDecoration.copyWith(
                                   hintText: "melissarose@gmail.com",
@@ -120,7 +119,6 @@ class _UIState extends State<UI> {
                                 height: 7,
                               ),
                               CustomTextField(
-                                enabled: false,
                                 obscureText: _visiblepassword!,
                                 inputDecoration: kInputDecoration.copyWith(
                                     hintText: "......",
@@ -187,7 +185,6 @@ class _UIState extends State<UI> {
                                 height: 7,
                               ),
                               CustomTextField(
-                                enabled: false,
                                 obscureText: false,
                                 inputDecoration: kInputDecoration.copyWith(
                                   hintText: "melissarose@gmail.com",
@@ -205,7 +202,6 @@ class _UIState extends State<UI> {
                                 height: 7,
                               ),
                               CustomTextField(
-                                enabled: false,
                                 obscureText: _visiblepassword!,
                                 inputDecoration: kInputDecoration.copyWith(
                                     hintText: "......",

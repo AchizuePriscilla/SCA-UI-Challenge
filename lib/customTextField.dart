@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
 
 class CustomTextField extends StatelessWidget {
-  final bool enabled;
   final bool obscureText;
   final InputDecoration inputDecoration;
 
   const CustomTextField({
     Key? key,
-    required this.enabled,
     required this.obscureText,
     required this.inputDecoration,
   }) : super(key: key);
@@ -15,7 +13,6 @@ class CustomTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextField(
-      enabled: enabled,
       obscureText: obscureText,
       style: TextStyle(
         color: Color(0xff424242),

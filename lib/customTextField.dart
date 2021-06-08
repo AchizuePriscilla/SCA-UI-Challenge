@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class SharedTextField extends StatelessWidget {
+class CustomTextField extends StatelessWidget {
   final bool enabled;
   final bool obscureText;
   final InputDecoration inputDecoration;
 
-  const SharedTextField({
+  const CustomTextField({
     Key? key,
     required this.enabled,
     required this.obscureText,

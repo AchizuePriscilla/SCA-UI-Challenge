@@ -58,7 +58,7 @@ class WelcomeScreen extends StatelessWidget {
                     ),
                     indicatorSize: TabBarIndicatorSize.label,
                     indicatorWeight: 4,
-                    indicatorColor: Color(0xff201F24),
+                    indicatorColor: Color(0xff737081),
                     tabs: [
                       Container(
                         width: 140.w,

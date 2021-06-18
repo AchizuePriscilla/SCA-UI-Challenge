@@ -15,7 +15,7 @@ class RoundTextContainer extends StatelessWidget {
       margin: EdgeInsets.only(right: 20.w, left: 5.w),
       padding: EdgeInsets.all(8),
       decoration: BoxDecoration(
-          color: Colors.blueGrey.shade100,
+          color: Colors.blueGrey.shade50,
           shape: BoxShape.rectangle,
           borderRadius: BorderRadius.circular(10)),
       child: Center(

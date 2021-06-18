@@ -65,7 +65,7 @@ class CustomListTile extends StatelessWidget {
         : Container(
             height: 90.h,
             child: ListTile(
-              horizontalTitleGap: 30.w,
+              horizontalTitleGap: 27.w,
               leading: Container(
                   height: 75.h,
                   width: 45.w,
@@ -94,26 +94,53 @@ class CustomListTile extends StatelessWidget {
                 padding: EdgeInsets.only(top: 10.h),
                 child: Row(
                   children: [
-                    Text(
-                      subtitleText1,
-                      style: GoogleFonts.publicSans(
-                        textStyle: TextStyle(
-                            fontSize: 13.sp,
-                            color: Color(0xff201F24),
-                            fontWeight: FontWeight.w700),
-                      ),
+                    Stack(
+                      children: [
+                        Container(
+                          height: 25.h,
+                          width: 35.w,
+                          decoration: BoxDecoration(
+                              shape: BoxShape.circle, color: Color(0xffFBEBCA)),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(left: 8.w, top: 5),
+                          child: Text(
+                            subtitleText1,
+                            style: GoogleFonts.publicSans(
+                              textStyle: TextStyle(
+                                  fontSize: 13.sp,
+                                  color: Color(0xff201F24),
+                                  fontWeight: FontWeight.w700),
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
                     SizedBox(
                       width: 30.w,
                     ),
-                    Text(
-                      subtitleText2,
-                      style: GoogleFonts.publicSans(
-                        textStyle: TextStyle(
-                            fontSize: 13.sp,
-                            color: Color(0xff201F24),
-                            fontWeight: FontWeight.w700),
-                      ),
+                    Stack(
+                      children: [
+                        Container(
+                          height: 25.h,
+                          width: 35.w,
+                          decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              color: Colors.blueGrey.shade100),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(left: 8.w, top: 5),
+                          child: Text(
+                            subtitleText2,
+                            style: GoogleFonts.publicSans(
+                              textStyle: TextStyle(
+                                  fontSize: 13.sp,
+                                  color: Color(0xff201F24),
+                                  fontWeight: FontWeight.w700),
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
                   ],
                 ),

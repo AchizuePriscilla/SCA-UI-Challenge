@@ -56,7 +56,7 @@ class DetailsScreen extends StatelessWidget {
                           children: [
                             Container(
                               margin: EdgeInsets.symmetric(
-                                  horizontal: 0, vertical: 10.h),
+                                  horizontal: 0, vertical: 8.h),
                               child: Text(
                                 'Exercise',
                                 style: GoogleFonts.publicSans(
@@ -72,7 +72,7 @@ class DetailsScreen extends StatelessWidget {
                                   borderRadius: BorderRadius.circular(7),
                                   color: Colors.white),
                               padding: EdgeInsets.only(left: 10.w),
-                              height: 80.h,
+                              height: 78.h,
                               child: Row(children: [
                                 CustomCircularListTile(
                                   icon: Icons.whatshot,
@@ -98,7 +98,7 @@ class DetailsScreen extends StatelessWidget {
                           children: [
                             Container(
                               margin: EdgeInsets.only(
-                                  left: 0, right: 0, top: 10.h, bottom: 10.h),
+                                  left: 0, right: 0, top: 8.h, bottom: 8.h),
                               child: Text(
                                 'Muscle groups',
                                 style: GoogleFonts.publicSans(
@@ -124,7 +124,7 @@ class DetailsScreen extends StatelessWidget {
                           children: [
                             Container(
                               margin:
-                                  EdgeInsets.only(left: 0, right: 0, top: 10.h),
+                                  EdgeInsets.only(left: 0, right: 0, top: 8.h),
                               child: Text(
                                 'History',
                                 style: GoogleFonts.publicSans(
@@ -137,7 +137,7 @@ class DetailsScreen extends StatelessWidget {
                             ),
                             Container(
                               padding: EdgeInsets.only(left: 10.w),
-                              height: 75.h,
+                              height: 73.h,
                               child: Row(children: [
                                 CustomListTile(
                                   index: 54,
@@ -152,11 +152,11 @@ class DetailsScreen extends StatelessWidget {
                                         EdgeInsets.symmetric(horizontal: 0),
                                     horizontalTitleGap: 6.w,
                                     leading: Container(
-                                      height: 75.h,
-                                      width: 45.w,
+                                      height: 73.h,
+                                      width: 43.w,
                                       decoration: BoxDecoration(
                                         color: Colors.blueGrey.shade100,
-                                        borderRadius: BorderRadius.circular(5),
+                                        borderRadius: BorderRadius.circular(8),
                                       ),
                                       child: Center(
                                         child: Column(children: [

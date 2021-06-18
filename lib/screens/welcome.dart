@@ -15,6 +15,7 @@ class WelcomeScreen extends StatelessWidget {
           backgroundColor: Color(0xffF8F7FC),
           elevation: 0,
           toolbarHeight: 70.h,
+          centerTitle: false,
           title: Padding(
             padding: EdgeInsets.only(left: 8.w),
             child: Text('Good morning!',
@@ -42,7 +43,8 @@ class WelcomeScreen extends StatelessWidget {
                 TabBar(
                     isScrollable: true,
                     indicator: UnderlineTabIndicator(
-                      borderSide: BorderSide(width: 3.2),
+                      borderSide: BorderSide(
+                          width: 3.2, color: Colors.blueGrey.shade600),
                       insets: EdgeInsets.fromLTRB(-10, 0.0, 20.0, 0.0),
                     ),
                     labelPadding: EdgeInsets.only(top: 10.h, right: 30.h),
@@ -85,12 +87,12 @@ class WelcomeScreen extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             SizedBox(
-                              height: 40.h,
+                              height: 30.h,
                             ),
                             Container(
                               margin: EdgeInsets.symmetric(horizontal: 6.h),
                               child: Text(
-                                '8 exercises',
+                                '6 exercises',
                                 textAlign: TextAlign.left,
                                 style: GoogleFonts.publicSans(
                                     textStyle: TextStyle(
@@ -99,7 +101,7 @@ class WelcomeScreen extends StatelessWidget {
                               ),
                             ),
                             SizedBox(
-                              height: 30.h,
+                              height: 20.h,
                             ),
                             Expanded(
                               child: ListView(shrinkWrap: true, children: [

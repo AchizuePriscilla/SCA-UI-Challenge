@@ -28,11 +28,11 @@ class CustomListTile extends StatelessWidget {
               contentPadding: EdgeInsets.symmetric(horizontal: 0),
               horizontalTitleGap: 6.w,
               leading: Container(
-                  height: 75.h,
-                  width: 45.w,
+                  height: 73.h,
+                  width: 43.w,
                   decoration: BoxDecoration(
                     color: Colors.blueGrey.shade100,
-                    borderRadius: BorderRadius.circular(5),
+                    borderRadius: BorderRadius.circular(8),
                   ),
                   child: Center(
                       child: Text(index.toString(),

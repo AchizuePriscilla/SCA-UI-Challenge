@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:sca_ui_challenge/screens/welcome.dart';
 import 'package:sca_ui_challenge/ui.dart';
 
 void main() {
@@ -8,10 +10,13 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      home: UI(),
+    return ScreenUtilInit(
+      designSize: Size(360, 630),
+      builder: () => MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'Flutter Demo',
+        home: WelcomeScreen(),
+      ),
     );
   }
 }

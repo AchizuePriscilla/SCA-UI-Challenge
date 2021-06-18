@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sca_ui_challenge/customTextField.dart';
+import 'package:sca_ui_challenge/shared/customTextField.dart';
 
 class UI extends StatefulWidget {
   const UI({Key? key}) : super(key: key);

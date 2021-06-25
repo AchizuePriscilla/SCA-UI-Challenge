@@ -167,7 +167,7 @@ class DetailsScreen extends StatelessWidget {
                                     elevation: 3,
                                     child: Container(
                                         height: 30.h,
-                                        width: 30.w,
+                                        width: 30.h,
                                         decoration: BoxDecoration(
                                           color: Color(0xffFECC4B),
                                           borderRadius: BorderRadius.all(

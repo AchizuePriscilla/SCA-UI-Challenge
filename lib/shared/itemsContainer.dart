@@ -90,7 +90,7 @@ class ItemsContainer extends StatelessWidget {
                     elevation: 3,
                     child: Container(
                       height: 35.h,
-                      width: 35.w,
+                      width: 35.h,
                       decoration: BoxDecoration(
                         color: Color(0xffFECC4B),
                         borderRadius: BorderRadius.all(

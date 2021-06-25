@@ -102,7 +102,7 @@ class _UIState extends State<UI> {
                                 height: 7,
                               ),
                               CustomTextField(
-                                obscureText: !_visiblepassword!,
+                                obscureText: false,
                                 inputDecoration: kInputDecoration.copyWith(
                                   hintText: "melissarose@gmail.com",
                                 ),

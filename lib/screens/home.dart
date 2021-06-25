@@ -128,7 +128,7 @@ class WelcomeScreen extends StatelessWidget {
                         borderRadius: BorderRadius.all(
                           Radius.circular(13),
                         ),
-                        elevation: 2,
+                        elevation: 1,
                         child: TextField(
                           decoration: InputDecoration(
                               border: OutlineInputBorder(

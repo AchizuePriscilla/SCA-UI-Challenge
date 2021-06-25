@@ -157,7 +157,7 @@ class WelcomeScreen extends StatelessWidget {
                         elevation: 3,
                         child: Container(
                           height: 50.h,
-                          width: 50.w,
+                          width: 50.h,
                           decoration: BoxDecoration(
                             color: Color(0xffFECC4B),
                             borderRadius: BorderRadius.all(
@@ -230,123 +230,130 @@ class WelcomeScreen extends StatelessWidget {
                                       mainAxisAlignment:
                                           MainAxisAlignment.spaceBetween,
                                       children: [
-                                        Column(
-                                          children: [
-                                            Container(
-                                              child: ItemsContainer(
-                                                isSmall: true,
-                                                color: Colors.green
-                                                    .withOpacity(0.3),
-                                                itemName: 'Cabbage',
-                                                itemWeight: '12kg',
-                                                number: '10.15',
-                                                imagePath:
-                                                    'assets/images/SCA_Cabbage2.png',
+                                        Expanded(
+                                          child: Column(
+                                            children: [
+                                              Container(
+                                                child: ItemsContainer(
+                                                  isSmall: true,
+                                                  color: Colors.green
+                                                      .withOpacity(0.3),
+                                                  itemName: 'Cabbage',
+                                                  itemWeight: '12kg',
+                                                  number: '10.15',
+                                                  imagePath:
+                                                      'assets/images/SCA_Cabbage2.png',
+                                                ),
+                                                margin: EdgeInsets.only(
+                                                    bottom: 8.h),
                                               ),
-                                              margin:
-                                                  EdgeInsets.only(bottom: 8.h),
-                                            ),
-                                            Container(
-                                              margin:
-                                                  EdgeInsets.only(bottom: 8.h),
-                                              child: ItemsContainer(
-                                                isSmall: false,
-                                                color: Color(0xffFAE6DA),
-                                                itemName: 'Rice',
-                                                itemWeight: '30kg',
-                                                number: '70.12',
-                                                imagePath:
-                                                    'assets/images/SCA_Rice2.png',
+                                              Container(
+                                                margin: EdgeInsets.only(
+                                                    bottom: 8.h),
+                                                child: ItemsContainer(
+                                                  isSmall: false,
+                                                  color: Color(0xffFAE6DA),
+                                                  itemName: 'Rice',
+                                                  itemWeight: '30kg',
+                                                  number: '70.12',
+                                                  imagePath:
+                                                      'assets/images/SCA_Rice2.png',
+                                                ),
                                               ),
-                                            ),
-                                            Container(
-                                              child: ItemsContainer(
-                                                isSmall: true,
-                                                color: Colors.green
-                                                    .withOpacity(0.3),
-                                                itemName: 'Cabbage',
-                                                itemWeight: '12kg',
-                                                number: '10.15',
-                                                imagePath:
-                                                    'assets/images/SCA_Cabbage2.png',
+                                              Container(
+                                                child: ItemsContainer(
+                                                  isSmall: true,
+                                                  color: Colors.green
+                                                      .withOpacity(0.3),
+                                                  itemName: 'Cabbage',
+                                                  itemWeight: '12kg',
+                                                  number: '10.15',
+                                                  imagePath:
+                                                      'assets/images/SCA_Cabbage2.png',
+                                                ),
+                                                margin: EdgeInsets.only(
+                                                    bottom: 8.h),
                                               ),
-                                              margin:
-                                                  EdgeInsets.only(bottom: 8.h),
-                                            ),
-                                            Container(
-                                              margin:
-                                                  EdgeInsets.only(bottom: 8.h),
-                                              child: ItemsContainer(
-                                                isSmall: false,
-                                                color: Color(0xffFAE6DA),
-                                                itemName: 'Rice',
-                                                itemWeight: '30kg',
-                                                number: '70.12',
-                                                imagePath:
-                                                    'assets/images/SCA_Rice2.png',
+                                              Container(
+                                                margin: EdgeInsets.only(
+                                                    bottom: 8.h),
+                                                child: ItemsContainer(
+                                                  isSmall: false,
+                                                  color: Color(0xffFAE6DA),
+                                                  itemName: 'Rice',
+                                                  itemWeight: '30kg',
+                                                  number: '70.12',
+                                                  imagePath:
+                                                      'assets/images/SCA_Rice2.png',
+                                                ),
                                               ),
-                                            ),
-                                          ],
+                                            ],
+                                          ),
                                         ),
-                                        Column(
-                                          children: [
-                                            Container(
-                                              margin:
-                                                  EdgeInsets.only(bottom: 8.h),
-                                              child: ItemsContainer(
-                                                isSmall: false,
-                                                color: Color(0xffFAE6DA),
-                                                itemName: 'Strawberry',
-                                                itemWeight: '8kg',
-                                                number: '6.10',
-                                                imagePath:
-                                                    'assets/images/SCA_Strawberries2.png',
+                                        SizedBox(
+                                          width: 20.w,
+                                        ),
+                                        Expanded(
+                                          child: Column(
+                                            children: [
+                                              Container(
+                                                margin: EdgeInsets.only(
+                                                    bottom: 8.h),
+                                                child: ItemsContainer(
+                                                  isSmall: false,
+                                                  color: Color(0xffFAE6DA),
+                                                  itemName: 'Strawberry',
+                                                  itemWeight: '8kg',
+                                                  number: '6.10',
+                                                  imagePath:
+                                                      'assets/images/SCA_Strawberries2.png',
+                                                ),
                                               ),
-                                            ),
-                                            Container(
-                                              margin:
-                                                  EdgeInsets.only(bottom: 8.h),
-                                              child: ItemsContainer(
-                                                isSmall: true,
-                                                color: Colors.deepPurpleAccent
-                                                    .withOpacity(0.3),
-                                                itemName: 'Cupcake',
-                                                itemWeight: '19kg',
-                                                number: '10',
-                                                imagePath:
-                                                    'assets/images/SCA_Cupcake2.png',
-                                                innerPadding: 0,
+                                              Container(
+                                                margin: EdgeInsets.only(
+                                                    bottom: 8.h),
+                                                child: ItemsContainer(
+                                                  isSmall: true,
+                                                  color: Colors.deepPurpleAccent
+                                                      .withOpacity(0.3),
+                                                  itemName: 'Cupcake',
+                                                  itemWeight: '19kg',
+                                                  number: '10',
+                                                  imagePath:
+                                                      'assets/images/SCA_Cupcake2.png',
+                                                  innerPadding: 0,
+                                                ),
                                               ),
-                                            ),
-                                            Container(
-                                              margin:
-                                                  EdgeInsets.only(bottom: 8.h),
-                                              child: ItemsContainer(
-                                                isSmall: false,
-                                                color: Color(0xffFAE6DA),
-                                                itemName: 'Strawberry',
-                                                itemWeight: '19kg',
-                                                number: '11.12',
-                                                imagePath:
-                                                    'assets/images/SCA_Strawberries2.png',
+                                              Container(
+                                                margin: EdgeInsets.only(
+                                                    bottom: 8.h),
+                                                child: ItemsContainer(
+                                                  isSmall: false,
+                                                  color: Color(0xffFAE6DA),
+                                                  itemName: 'Strawberry',
+                                                  itemWeight: '19kg',
+                                                  number: '11.12',
+                                                  imagePath:
+                                                      'assets/images/SCA_Strawberries2.png',
+                                                ),
                                               ),
-                                            ),
-                                            Container(
-                                              margin:
-                                                  EdgeInsets.only(bottom: 8.h),
-                                              child: ItemsContainer(
-                                                isSmall: true,
-                                                color: Colors.deepPurpleAccent
-                                                    .withOpacity(0.3),
-                                                itemName: 'Cupcake',
-                                                itemWeight: '12kg',
-                                                number: '10.12',
-                                                imagePath:
-                                                    'assets/images/SCA_Cupcake2.png',
-                                                innerPadding: 0,
+                                              Container(
+                                                margin: EdgeInsets.only(
+                                                    bottom: 8.h),
+                                                child: ItemsContainer(
+                                                  isSmall: true,
+                                                  color: Colors.deepPurpleAccent
+                                                      .withOpacity(0.3),
+                                                  itemName: 'Cupcake',
+                                                  itemWeight: '12kg',
+                                                  number: '10.12',
+                                                  imagePath:
+                                                      'assets/images/SCA_Cupcake2.png',
+                                                  innerPadding: 0,
+                                                ),
                                               ),
-                                            ),
-                                          ],
+                                            ],
+                                          ),
                                         ),
                                       ]),
                                 ]),

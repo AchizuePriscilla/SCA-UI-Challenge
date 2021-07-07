@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:sca_ui_challenge/customTextField.dart';
+import 'package:sca_ui_challenge/signIn.dart';
+import 'package:sca_ui_challenge/signUp.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class UI extends StatefulWidget {
   const UI({Key? key}) : super(key: key);
@@ -8,14 +11,21 @@ class UI extends StatefulWidget {
   _UIState createState() => _UIState();
 }
 
-class _UIState extends State<UI> {
+class _UIState extends State<UI> with SingleTickerProviderStateMixin {
   bool? _visiblepassword;
+  TabController? tabController;
 
   @override
   void initState() {
     super.initState();
     _visiblepassword = false;
+    tabController = TabController(length: 2, vsync: this);
   }
+
+  TextEditingController emailController1 = TextEditingController();
+  TextEditingController passwordController1 = TextEditingController();
+  TextEditingController emailController2 = TextEditingController();
+  TextEditingController passwordController2 = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -62,6 +72,7 @@ class _UIState extends State<UI> {
                 child: Column(
                   children: [
                     TabBar(
+                        controller: tabController,
                         isScrollable: false,
                         indicator: UnderlineTabIndicator(
                           borderSide:
@@ -88,172 +99,56 @@ class _UIState extends State<UI> {
                         ]),
                     Expanded(
                       child: Container(
-                        child: TabBarView(children: [
-                          Container(
-                            padding: EdgeInsets.symmetric(horizontal: 10),
-                            margin: EdgeInsets.symmetric(horizontal: 10),
-                            child: ListView(children: [
-                              Text(
-                                'E-mail',
-                                style: TextStyle(
-                                    color: Color(0xff84868a), fontSize: 14),
-                              ),
-                              SizedBox(
-                                height: 7,
-                              ),
-                              CustomTextField(
-                                obscureText: false,
-                                inputDecoration: kInputDecoration.copyWith(
-                                  hintText: "melissarose@gmail.com",
-                                ),
-                              ),
-                              SizedBox(
-                                height: 20,
-                              ),
-                              Text(
-                                'Password',
-                                style: TextStyle(
-                                    color: Color(0xff84868a), fontSize: 14),
-                              ),
-                              SizedBox(
-                                height: 7,
-                              ),
-                              CustomTextField(
-                                obscureText: _visiblepassword!,
-                                inputDecoration: kInputDecoration.copyWith(
-                                    hintText: "......",
-                                    suffixIcon: _visiblepassword!
-                                        ? IconButton(
-                                            icon:
-                                                Icon(Icons.visibility_outlined),
-                                            color: Color(0xff2541fb),
-                                            onPressed: () {
-                                              setState(() {
-                                                _visiblepassword =
-                                                    !_visiblepassword!;
-                                              });
-                                            },
-                                          )
-                                        : IconButton(
-                                            icon: Icon(
-                                                Icons.visibility_off_outlined),
-                                            color: Color(0xff2541fb),
-                                            onPressed: () {
-                                              setState(() {
-                                                _visiblepassword =
-                                                    !_visiblepassword!;
-                                              });
-                                            },
-                                          )),
-                              ),
-                              SizedBox(
-                                height: 50,
-                              ),
-                              SizedBox(
-                                height: 55,
-                                child: TextButton(
-                                  style: ButtonStyle(
-                                    shape: MaterialStateProperty.all<
-                                            RoundedRectangleBorder>(
-                                        RoundedRectangleBorder(
-                                            borderRadius: BorderRadius.all(
-                                                Radius.circular(16)))),
-                                    backgroundColor: MaterialStateProperty.all(
-                                      Color(0xff2541fb),
-                                    ),
+                        child: TabBarView(controller: tabController, children: [
+                          SignUp(
+                            tabController: tabController,
+                            emailController: emailController1,
+                            passwordController: passwordController1,
+                            visiblePassword: _visiblepassword,
+                            suffixIcon: _visiblepassword!
+                                ? IconButton(
+                                    icon: Icon(Icons.visibility_outlined),
+                                    color: Color(0xff2541fb),
+                                    onPressed: () {
+                                      setState(() {
+                                        _visiblepassword = !_visiblepassword!;
+                                      });
+                                    },
+                                  )
+                                : IconButton(
+                                    icon: Icon(Icons.visibility_off_outlined),
+                                    color: Color(0xff2541fb),
+                                    onPressed: () {
+                                      setState(() {
+                                        _visiblepassword = !_visiblepassword!;
+                                      });
+                                    },
                                   ),
-                                  onPressed: () {},
-                                  child: Text(
-                                    'Sign Up',
-                                    style: TextStyle(
-                                        color: Colors.white, fontSize: 16),
-                                  ),
-                                ),
-                              )
-                            ]),
                           ),
-                          Container(
-                            padding: EdgeInsets.symmetric(horizontal: 10),
-                            margin: EdgeInsets.symmetric(horizontal: 10),
-                            child: ListView(children: [
-                              Text(
-                                'E-mail',
-                                style: TextStyle(
-                                    color: Color(0xff84868a), fontSize: 14),
-                              ),
-                              SizedBox(
-                                height: 7,
-                              ),
-                              CustomTextField(
-                                obscureText: false,
-                                inputDecoration: kInputDecoration.copyWith(
-                                  hintText: "melissarose@gmail.com",
-                                ),
-                              ),
-                              SizedBox(
-                                height: 20,
-                              ),
-                              Text(
-                                'Password',
-                                style: TextStyle(
-                                    color: Color(0xff84868a), fontSize: 14),
-                              ),
-                              SizedBox(
-                                height: 7,
-                              ),
-                              CustomTextField(
-                                obscureText: _visiblepassword!,
-                                inputDecoration: kInputDecoration.copyWith(
-                                    hintText: "......",
-                                    suffixIcon: _visiblepassword!
-                                        ? IconButton(
-                                            icon:
-                                                Icon(Icons.visibility_outlined),
-                                            color: Color(0xff2541fb),
-                                            onPressed: () {
-                                              setState(() {
-                                                _visiblepassword =
-                                                    !_visiblepassword!;
-                                              });
-                                            },
-                                          )
-                                        : IconButton(
-                                            icon: Icon(
-                                                Icons.visibility_off_outlined),
-                                            color: Color(0xff2541fb),
-                                            onPressed: () {
-                                              setState(() {
-                                                _visiblepassword =
-                                                    !_visiblepassword!;
-                                              });
-                                            },
-                                          )),
-                              ),
-                              SizedBox(
-                                height: 50,
-                              ),
-                              SizedBox(
-                                height: 55,
-                                child: TextButton(
-                                  style: ButtonStyle(
-                                    shape: MaterialStateProperty.all<
-                                            RoundedRectangleBorder>(
-                                        RoundedRectangleBorder(
-                                            borderRadius: BorderRadius.all(
-                                                Radius.circular(16)))),
-                                    backgroundColor: MaterialStateProperty.all(
-                                      Color(0xff2541fb),
-                                    ),
+                          SignIn(
+                            tabController: tabController,
+                            emailController: emailController2,
+                            passwordController: passwordController2,
+                            visiblePassword: _visiblepassword,
+                            suffixIcon: _visiblepassword!
+                                ? IconButton(
+                                    icon: Icon(Icons.visibility_outlined),
+                                    color: Color(0xff2541fb),
+                                    onPressed: () {
+                                      setState(() {
+                                        _visiblepassword = !_visiblepassword!;
+                                      });
+                                    },
+                                  )
+                                : IconButton(
+                                    icon: Icon(Icons.visibility_off_outlined),
+                                    color: Color(0xff2541fb),
+                                    onPressed: () {
+                                      setState(() {
+                                        _visiblepassword = !_visiblepassword!;
+                                      });
+                                    },
                                   ),
-                                  onPressed: () {},
-                                  child: Text(
-                                    'Sign In',
-                                    style: TextStyle(
-                                        color: Colors.white, fontSize: 16),
-                                  ),
-                                ),
-                              )
-                            ]),
                           ),
                         ]),
                       ),

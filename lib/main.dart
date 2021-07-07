@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sca_ui_challenge/ui.dart';
+import 'package:sca_ui_challenge/splash_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      home: UI(),
+      home: SplashScreen(),
     );
   }
 }

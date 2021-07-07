@@ -47,11 +47,9 @@ class _HomeScreenState extends State<HomeScreen> {
                     onPressed: () async {
                       SharedPreferences emailpreference =
                           await SharedPreferences.getInstance();
-                      SharedPreferences passwordpreference =
-                          await SharedPreferences.getInstance();
 
                       emailpreference.remove('email');
-                      passwordpreference.remove('password');
+
                       Navigator.push(context, MaterialPageRoute(
                         builder: (context) {
                           return UI();

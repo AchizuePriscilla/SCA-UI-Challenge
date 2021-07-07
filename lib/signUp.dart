@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:sca_ui_challenge/customTextField.dart';
 
 class SignUp extends StatelessWidget {
@@ -70,9 +70,13 @@ class SignUp extends StatelessWidget {
               SharedPreferences emailpreference =
                   await SharedPreferences.getInstance();
               emailpreference.setString('email', emailController.text);
-              SharedPreferences passwordpreference =
-                  await SharedPreferences.getInstance();
-              passwordpreference.setString('password', passwordController.text);
+              Fluttertoast.showToast(
+                  msg: "Sign up successful, please proceed to Sign in",
+                  toastLength: Toast.LENGTH_LONG,
+                  gravity: ToastGravity.BOTTOM,
+                  timeInSecForIosWeb: 2,
+                  backgroundColor: Colors.green,
+                  textColor: Colors.white);
               if (tabController != null) {
                 tabController!.animateTo((tabController!.index + 1) % 2);
               }

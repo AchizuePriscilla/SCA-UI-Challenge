@@ -14,7 +14,7 @@ class SplashScreen extends StatefulWidget {
 
 class _SplashScreenState extends State<SplashScreen> {
   var userEmail;
-  var userPassword;
+ 
 
   @override
   void initState() {
@@ -24,7 +24,7 @@ class _SplashScreenState extends State<SplashScreen> {
             context,
             MaterialPageRoute(
               builder: (context) {
-                return userEmail != null && userPassword != null
+                return userEmail != null
                     ? HomeScreen()
                     : UI();
               },
@@ -36,15 +36,14 @@ class _SplashScreenState extends State<SplashScreen> {
 
   Future validate() async {
     SharedPreferences emailpreference = await SharedPreferences.getInstance();
-    SharedPreferences passwordpreference =
-        await SharedPreferences.getInstance();
+   
 
     var email = emailpreference.getString('email');
-    var password = passwordpreference.getString('password');
+   
 
     setState(() {
       userEmail = email;
-      userPassword = password;
+      
     });
   }
 

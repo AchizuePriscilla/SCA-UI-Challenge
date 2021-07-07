@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:sca_ui_challenge/home_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'package:sca_ui_challenge/customTextField.dart';
 
-class SignIn extends StatelessWidget {
+class SignIn extends StatefulWidget {
   const SignIn(
       {Key? key,
       required this.emailController,
@@ -19,6 +20,30 @@ class SignIn extends StatelessWidget {
   final TabController? tabController;
   final bool? visiblePassword;
   final Widget? suffixIcon;
+
+  @override
+  _SignInState createState() => _SignInState();
+}
+
+class _SignInState extends State<SignIn> {
+  loginSuccessful() {
+    Fluttertoast.showToast(
+        msg: "Sign In successful",
+        toastLength: Toast.LENGTH_SHORT,
+        gravity: ToastGravity.BOTTOM,
+        timeInSecForIosWeb: 2,
+        backgroundColor: Colors.green,
+        textColor: Colors.white);
+
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) {
+          return HomeScreen();
+        },
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +61,7 @@ class SignIn extends StatelessWidget {
         CustomTextField(
           obscureText: false,
           hintText: "melissarose@gmail.com",
-          controller: emailController,
+          controller: widget.emailController,
         ),
         SizedBox(
           height: 20,
@@ -49,10 +74,10 @@ class SignIn extends StatelessWidget {
           height: 7,
         ),
         CustomTextField(
-            obscureText: visiblePassword!,
+            obscureText: widget.visiblePassword!,
             hintText: "......",
-            controller: passwordController,
-            suffixIcon: suffixIcon),
+            controller: widget.passwordController,
+            suffixIcon: widget.suffixIcon),
         SizedBox(
           height: 50,
         ),
@@ -67,26 +92,20 @@ class SignIn extends StatelessWidget {
                 Color(0xff2541fb),
               ),
             ),
-            onPressed: emailController.text != null &&
-                    passwordController.text != null
-                ? () async {
-                    SharedPreferences emailpreference =
-                        await SharedPreferences.getInstance();
-                    emailpreference.setString('email', emailController.text);
-                    SharedPreferences passwordpreference =
-                        await SharedPreferences.getInstance();
-                    passwordpreference.setString(
-                        'password', passwordController.text);
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) {
-                          return HomeScreen();
-                        },
-                      ),
-                    );
-                  }
-                : null,
+            onPressed: () async {
+              SharedPreferences emailpreference =
+                  await SharedPreferences.getInstance();
+              var email = emailpreference.getString('email');
+              widget.emailController.text == email
+                  ? loginSuccessful()
+                  : Fluttertoast.showToast(
+                      msg: "Invalid Email",
+                      toastLength: Toast.LENGTH_SHORT,
+                      gravity: ToastGravity.BOTTOM,
+                      timeInSecForIosWeb: 2,
+                      backgroundColor: Colors.red,
+                      textColor: Colors.white);
+            },
             child: Text(
               'Sign In',
               style: TextStyle(color: Colors.white, fontSize: 16),

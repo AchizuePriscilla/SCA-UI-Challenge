@@ -1,0 +1,34 @@
+{
+    "items": [
+      {
+        "titleText": "Front Squat",
+        "subtitleText1": "Strength",
+        "subtitleText2": "Medium Intensity"
+      },
+      {
+        "titleText": "Hip Abduction",
+        "subtitleText1": "Strength",
+        "subtitleText2": "Low Intensity"
+      },
+      {
+        "titleText": "Front Squat",
+        "subtitleText1": "Strength",
+        "subtitleText2": "High Intensity"
+      },
+      {
+        "titleText": "Elliptical Constrainer",
+        "subtitleText1": "Cardio",
+        "subtitleText2": "High Intensity"
+      },
+      {
+        "titleText": "Goblet Squats",
+        "subtitleText1": "Flexibility",
+        "subtitleText2": "High Intensity"
+      },
+      {
+        "titleText": "Front Squat",
+        "subtitleText1": "Strength",
+        "subtitleText2": "Low Intensity"
+      }
+    ]
+  }

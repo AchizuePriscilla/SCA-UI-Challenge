@@ -1,11 +1,33 @@
+import 'dart:async';
+import 'dart:convert';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:sca_ui_challenge/screens/details.dart';
 import 'package:sca_ui_challenge/shared/customListTile.dart';
 
-class WelcomeScreen extends StatelessWidget {
+class WelcomeScreen extends StatefulWidget {
   const WelcomeScreen({Key? key}) : super(key: key);
+
+  @override
+  _WelcomeScreenState createState() => _WelcomeScreenState();
+}
+
+class _WelcomeScreenState extends State<WelcomeScreen> {
+  List _items = [];
+  Future<void> readJson() async {
+    final String response = await rootBundle.loadString('assets/data.json');
+    final data = await json.decode(response);
+    setState(() {
+      _items = data["items"];
+    });
+  }
+
+  @override
+  void initState() {
+    readJson();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -104,50 +126,22 @@ class WelcomeScreen extends StatelessWidget {
                               height: 20.h,
                             ),
                             Expanded(
-                              child: ListView(shrinkWrap: true, children: [
-                                CustomListTile(
-                                  isSmall: false,
-                                  index: 1,
-                                  titleText: 'Front Squat',
-                                  subtitleText1: 'Strength',
-                                  subtitleText2: 'Medium Intensity',
-                                ),
-                                CustomListTile(
-                                  isSmall: false,
-                                  index: 2,
-                                  titleText: 'Hip Abduction',
-                                  subtitleText1: 'Strength',
-                                  subtitleText2: 'Low Intensity',
-                                ),
-                                CustomListTile(
-                                  isSmall: false,
-                                  index: 3,
-                                  titleText: 'Front Squat',
-                                  subtitleText1: 'Strength',
-                                  subtitleText2: 'High Intensity',
-                                ),
-                                CustomListTile(
-                                  isSmall: false,
-                                  index: 4,
-                                  titleText: 'Elliptical Constrainer',
-                                  subtitleText1: 'Cardio',
-                                  subtitleText2: 'High Intensity',
-                                ),
-                                CustomListTile(
-                                  isSmall: false,
-                                  index: 5,
-                                  titleText: 'Goblet Squats',
-                                  subtitleText1: 'Flexibility',
-                                  subtitleText2: 'Medium Intensity',
-                                ),
-                                CustomListTile(
-                                  isSmall: false,
-                                  index: 6,
-                                  titleText: 'Front Squat',
-                                  subtitleText1: 'Strength',
-                                  subtitleText2: 'Low Intensity',
-                                ),
-                              ]),
+                              child: _items.length > 0
+                                  ? ListView.builder(
+                                      itemCount: _items.length,
+                                      itemBuilder: (context, index) {
+                                        return CustomListTile(
+                                            index: index,
+                                            titleText: _items[index]
+                                                ["titleText"],
+                                            subtitleText1: _items[index]
+                                                ["subtitleText1"],
+                                            subtitleText2: _items[index]
+                                                ["subtitleText2"],
+                                            isSmall: false);
+                                      },
+                                    )
+                                  : Center(child: CircularProgressIndicator()),
                             ),
                           ],
                         ),

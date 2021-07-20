@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:sca_ui_challenge/customTextField.dart';
+import 'package:fluttertoast/fluttertoast.dart';
+
 import 'package:sca_ui_challenge/signIn.dart';
 import 'package:sca_ui_challenge/signUp.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 class UI extends StatefulWidget {
-  const UI({Key? key}) : super(key: key);
+  const UI({
+    Key? key,
+    this.counter,
+  }) : super(key: key);
+  final int? counter;
 
   @override
   _UIState createState() => _UIState();
@@ -20,6 +24,15 @@ class _UIState extends State<UI> with SingleTickerProviderStateMixin {
     super.initState();
     _visiblepassword = false;
     tabController = TabController(length: 2, vsync: this);
+    widget.counter != 0
+        ? Fluttertoast.showToast(
+            msg: "This app has been launched ${widget.counter} times",
+            toastLength: Toast.LENGTH_SHORT,
+            gravity: ToastGravity.BOTTOM,
+            timeInSecForIosWeb: 2,
+            backgroundColor: Colors.red,
+            textColor: Colors.white)
+        : null;
   }
 
   TextEditingController emailController1 = TextEditingController();

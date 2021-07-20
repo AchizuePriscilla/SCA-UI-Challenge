@@ -1,15 +1,35 @@
 import 'package:flutter/material.dart';
-import 'package:sca_ui_challenge/ui.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import 'package:sca_ui_challenge/ui.dart';
+
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+  const HomeScreen({
+    Key? key,
+    this.counter,
+  }) : super(key: key);
+  final int? counter;
 
   @override
   _HomeScreenState createState() => _HomeScreenState();
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  @override
+  void initState() {
+    widget.counter != 0
+        ? Fluttertoast.showToast(
+            msg: "This app has been launched ${widget.counter} times",
+            toastLength: Toast.LENGTH_SHORT,
+            gravity: ToastGravity.BOTTOM,
+            timeInSecForIosWeb: 2,
+            backgroundColor: Colors.red,
+            textColor: Colors.white)
+        : null;
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(

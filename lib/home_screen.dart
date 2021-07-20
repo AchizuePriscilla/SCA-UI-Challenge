@@ -23,11 +23,10 @@ class _HomeScreenState extends State<HomeScreen> {
             msg: "This app has been launched ${widget.counter} times",
             toastLength: Toast.LENGTH_SHORT,
             gravity: ToastGravity.BOTTOM,
-            timeInSecForIosWeb: 2,
+            timeInSecForIosWeb: 4,
             backgroundColor: Colors.red,
             textColor: Colors.white)
-        : null;
-    super.initState();
+        : super.initState();
   }
 
   @override
@@ -72,7 +71,9 @@ class _HomeScreenState extends State<HomeScreen> {
 
                       Navigator.push(context, MaterialPageRoute(
                         builder: (context) {
-                          return UI();
+                          return UI(
+                            counter: 0,
+                          );
                         },
                       ));
                     },
